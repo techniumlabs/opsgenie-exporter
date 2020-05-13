@@ -16,6 +16,7 @@ env:
   IMAGE_NAME: opsgenie-exporter
   IMAGE_VERSION: 0.0.1-r${{github.run_number}}
   IMAGE_REGISTRY: techniumlabs
+  BASE_IMAGE_REPOSITORY: alpine
   IMAGE_REPOSITORY: opsgenie-exporter
 
 jobs:
@@ -34,7 +35,7 @@ jobs:
             --label "org.opencontainers.image.revision=${{github.sha}}"
             --label "org.opencontainers.image.vendor=techniumlabs"
             --build-arg IMAGE_REGISTRY=${IMAGE_REGISTRY}
-            --build-arg IMAGE_REPOSITORY=${IMAGE_REPOSITORY}
+            --build-arg IMAGE_REPOSITORY=${BASE_IMAGE_REPOSITORY}
             --build-arg MAINTAINER=${MAINTAINER} --build-arg TIMEZONE=${TIMEZONE} --tag image .
 
         env:
