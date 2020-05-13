@@ -15,8 +15,8 @@ on:
 env:
   IMAGE_NAME: opsgenie-exporter
   IMAGE_VERSION: 0.0.1-r${{github.run_number}}
-  IMAGE_REGISTRY: techniumlabs
-  BASE_IMAGE_REPOSITORY: alpine
+  IMAGE_REGISTRY: hub.docker.com
+  BASE_IMAGE_REPOSITORY: techniumlabs
   IMAGE_REPOSITORY: opsgenie-exporter
 
 jobs:
