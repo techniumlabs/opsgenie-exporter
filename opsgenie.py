@@ -46,7 +46,7 @@ class OpsgenieCollector():
 
 def setup():
     m = Opsgenie(settings.APIKEY)
-    REGISTRY.register(OpsgenieCollector(m, ['prod-blue']))
+    REGISTRY.register(OpsgenieCollector(m, settings.INTEGRATIONS.split(',')))
     start_http_server(8000)
 
 if __name__ == '__main__':
