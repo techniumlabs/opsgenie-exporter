@@ -10,6 +10,7 @@ COPY --chown=appuser requirements.txt /app
 
 RUN apk add --no-cache \
   python3=3.7.5-r1 \
+  py3-numpy=1.16.4-r1 \
   && pip3 install -r requirements.txt
 
 COPY --chown=appuser opsgenie.py /app/opsgenie.py
